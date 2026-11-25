@@ -1,0 +1,2 @@
+- Keep the public site as a focused single-page service homepage until dedicated service pages are requested; this preserves the agreed scope.
+- Use the pine/coral frosted-glass visual system with Space Grotesk and DM Sans; this is the selected brand direction.

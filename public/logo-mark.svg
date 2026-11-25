@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="mark-bg" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f6a07a"/>
+      <stop offset="0.4" stop-color="#e8734a"/>
+      <stop offset="1" stop-color="#c94e28"/>
+    </linearGradient>
+    <linearGradient id="mark-glass" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="mark-shine" x1="8" y1="6" x2="28" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#mark-bg)"/>
+  <rect width="48" height="48" rx="12" fill="url(#mark-shine)"/>
+  <rect x="1" y="1" width="46" height="46" rx="11" stroke="#ffffff" stroke-opacity="0.28"/>
+  <rect x="11" y="11" width="26" height="26" rx="3.5" stroke="url(#mark-glass)" stroke-width="1.75"/>
+  <path d="M24 11v26M11 24h26" stroke="url(#mark-glass)" stroke-width="1.35"/>
+  <path
+    d="M13 32c4-3 7-3 11 0 3 2.5 6 2.5 10 0"
+    stroke="#fff"
+    stroke-opacity="0.95"
+    stroke-width="2.75"
+    stroke-linecap="round"
+  />
+</svg>

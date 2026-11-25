@@ -1,0 +1,12 @@
+# https://krasimokna.ru
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+Sitemap: https://krasimokna.ru/sitemap.xml
