@@ -69,6 +69,7 @@ import {
   applyPortfolioRuCopy,
   HOME_BEFORE_AFTER_ID,
 } from "./portfolio-ru-overrides";
+import { viteAssetUrl } from "../lib/asset-url";
 
 export type PortfolioProject = {
   id: string;
@@ -481,9 +482,17 @@ const portfolioProjectsBase: PortfolioProject[] = [
   newbuildDoor,
 ];
 
-export const portfolioProjects = portfolioProjectsBase.map(applyPortfolioRuCopy);
+function withDevAssetUrls(project: PortfolioProject): PortfolioProject {
+  return {
+    ...project,
+    beforeSrc: viteAssetUrl(project.beforeSrc),
+    afterSrc: viteAssetUrl(project.afterSrc),
+  };
+}
+
+export const portfolioProjects = portfolioProjectsBase.map(applyPortfolioRuCopy).map(withDevAssetUrls);
 
 const homeBeforeAfterBase =
   portfolioProjectsBase.find((p) => p.id === HOME_BEFORE_AFTER_ID) ?? apartmentPvc;
 
-export const homeBeforeAfter = applyPortfolioRuCopy(homeBeforeAfterBase);
+export const homeBeforeAfter = withDevAssetUrls(applyPortfolioRuCopy(homeBeforeAfterBase));

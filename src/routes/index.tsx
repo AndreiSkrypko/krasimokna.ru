@@ -19,7 +19,9 @@ import { MARKET } from "../lib/site-config";
 import { HOME_LEAD_MODAL_COPY, type HomeLeadModalVariant } from "../lib/home-lead-modal";
 import { scrollToAnchor } from "../lib/scrollAnchor";
 import { homeCopy } from "../data/copy-ru";
-import heroImage from "../assets/window-painting-hero-ru.webp?url";
+
+/** Стабильный URL (public/) — иначе в dev SSR/клиент расходятся по ?url и ломают гидрацию */
+const heroImage = "/window-painting-hero-ru.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,15 +115,15 @@ function HomePage() {
             width={1920}
             height={1088}
             fetchPriority="high"
-            className="hero-photo hero-ken-burns size-full object-cover object-[78%_42%] sm:object-[72%_center] lg:object-[62%_38%] xl:object-[58%_36%]"
+            className="hero-photo hero-ken-burns size-full object-cover object-[34%_42%] sm:object-[32%_40%] lg:object-[30%_38%]"
           />
         </div>
         <div className="hero-scrim absolute inset-0 -z-10" aria-hidden="true" />
         <div className="hero-vignette pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
         <section id="top" className="site-container relative flex min-h-0 flex-1 flex-col justify-end pb-10 pt-2 sm:justify-center sm:pb-12 sm:pt-4 lg:pb-14">
-          <div className="hero-stagger grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-center lg:gap-10 xl:gap-14">
-            <div className="relative max-w-3xl lg:max-w-none">
+          <div className="hero-stagger hero-stagger--ru grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(5.5rem,0.45fr)_minmax(17.5rem,21.5rem)] lg:items-center lg:gap-6 xl:gap-8">
+            <div className="relative max-w-3xl lg:col-start-1 lg:max-w-none">
             <p className="hero-kicker flex items-center gap-3">
               <span className="h-px w-8 bg-white/35" aria-hidden="true" />
               {MARKET.heroKicker}
@@ -166,7 +168,8 @@ function HomePage() {
             <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/45">{homeCopy.materialsLine}</p>
             </div>
 
-            <div className="hidden min-w-0 lg:block">
+            <div className="hero-stagger-spacer hidden min-w-0 lg:col-start-2 lg:block" aria-hidden="true" />
+            <div className="hidden min-w-0 lg:col-start-3 lg:block">
               <HeroLeadCard />
             </div>
           </div>
@@ -189,11 +192,11 @@ function HomePage() {
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-stretch lg:gap-8">
             <Reveal delay={0.06} className="flex min-w-0 flex-col">
-              <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl ring-1 ring-primary/10 lg:min-h-full">
+              <div className="before-after-home flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl ring-1 ring-primary/10 lg:min-h-full">
                 <BeforeAfterSlider
                   layout="card"
                   fillColumn
-                  showFooterNote={false}
+                  showFooterNote
                   beforeSrc={homeBeforeAfter.beforeSrc}
                   afterSrc={homeBeforeAfter.afterSrc}
                   beforeAlt={homeBeforeAfter.beforeAlt}

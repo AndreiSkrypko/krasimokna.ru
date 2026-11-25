@@ -18,6 +18,7 @@ import serviceHardware from "../assets/service-hardware.webp?url";
 import serviceRadiators from "../assets/service-radiators.webp?url";
 import serviceGates from "../assets/service-gates.webp?url";
 import serviceWindowCleaning from "../assets/service-window-cleaning.webp?url";
+import { viteAssetUrl } from "../lib/asset-url";
 
 export type ServiceDefinition = {
   slug: string;
@@ -41,7 +42,7 @@ export const services: ServiceDefinition[] = [
     icon: Paintbrush,
     title: "Покраска профиля на объекте",
     shortText: "Меняем цвет деревянных, ПВХ и алюминиевых окон и дверей без демонтажа створок.",
-    image: servicePainting,
+    image: viteAssetUrl(servicePainting),
     imageAlt: "Мастер наносит краску на оконный профиль пульверизатором в квартире",
     metaTitle: "Покраска окон и дверей на месте — Москва и МО | Красим окна",
     metaDescription:
@@ -71,7 +72,7 @@ export const services: ServiceDefinition[] = [
     icon: AirVent,
     title: "Окраска блоков кондиционера",
     shortText: "Приводим внутренние и наружные модули к одному цвету с интерьером или фасадом.",
-    image: serviceAcUnits,
+    image: viteAssetUrl(serviceAcUnits),
     imageAlt: "Покраска пластикового корпуса внутреннего блока сплит-системы",
     metaTitle: "Покраска кондиционеров на объекте — Москва | Красим окна",
     metaDescription:
@@ -101,7 +102,7 @@ export const services: ServiceDefinition[] = [
     icon: Hammer,
     title: "Реставрация деревянных рам",
     shortText: "Закрываем трещины, восстанавливаем геометрию и обновляем защитный слой на древесине.",
-    image: serviceRestoration,
+    image: viteAssetUrl(serviceRestoration),
     imageAlt: "Шпаклёвка и шлифовка деревянного оконного профиля",
     metaTitle: "Ремонт и реставрация деревянных окон — МО | Красим окна",
     metaDescription:
@@ -131,7 +132,7 @@ export const services: ServiceDefinition[] = [
     icon: ShieldCheck,
     title: "Замена стеклопакетов",
     shortText: "Меняем запотевшие или повреждённые пакеты, возвращаем тепло и тишину.",
-    image: serviceGlazing,
+    image: viteAssetUrl(serviceGlazing),
     imageAlt: "Монтаж нового стеклопакета в пластиковую створку",
     metaTitle: "Замена стеклопакетов в окнах — Москва и область | Красим окна",
     metaDescription:
@@ -161,7 +162,7 @@ export const services: ServiceDefinition[] = [
     icon: Wrench,
     title: "Фурнитура и уплотнители",
     shortText: "Настраиваем створки, меняем резину и изношенные петли — убираем продувание.",
-    image: serviceHardware,
+    image: viteAssetUrl(serviceHardware),
     imageAlt: "Регулировка фурнитуры и замена уплотнителя на пластиковом окне",
     metaTitle: "Ремонт фурнитуры и уплотнителей — Москва | Красим окна",
     metaDescription:
@@ -191,7 +192,7 @@ export const services: ServiceDefinition[] = [
     icon: Sparkles,
     title: "Мойка окон после ремонта",
     shortText: "Снимаем строительную пыль со стёкол и профиля, обслуживаем фурнитуру.",
-    image: serviceWindowCleaning,
+    image: viteAssetUrl(serviceWindowCleaning),
     imageAlt: "Профессиональная мойка стекла и рамы после отделочных работ",
     metaTitle: "Клининг окон после ремонта — Москва и МО | Красим окна",
     metaDescription:
@@ -221,7 +222,7 @@ export const services: ServiceDefinition[] = [
     icon: Flame,
     title: "Покраска радиаторов отопления",
     shortText: "Обновляем батареи ровным слоем, устойчивым к нагреву, без капель на пол.",
-    image: serviceRadiators,
+    image: viteAssetUrl(serviceRadiators),
     imageAlt: "Окраска секций радиатора краскопультом с защитой пола",
     metaTitle: "Покраска батарей отопления — выезд по Москве | Красим окна",
     metaDescription:
@@ -251,7 +252,7 @@ export const services: ServiceDefinition[] = [
     icon: DoorOpen,
     title: "Покраска секционных ворот",
     shortText: "Обновляем гаражные ворота и металлоконструкции с защитой от коррозии.",
-    image: serviceGates,
+    image: viteAssetUrl(serviceGates),
     imageAlt: "Покраска полотна секционных гаражных ворот на объекте",
     metaTitle: "Покраска гаражных ворот — Московская область | Красим окна",
     metaDescription:

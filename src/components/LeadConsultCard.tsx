@@ -31,13 +31,16 @@ export function LeadConsultCard({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const isDark = variant === "dark";
+  const isHeroLead = id === "hero-lead";
 
   const fieldClassName = isDark
-    ? "min-h-11 w-full rounded-xl border border-white/22 bg-white/10 px-4 text-sm text-white shadow-sm outline-none transition placeholder:text-white/45 focus:border-accent/80 focus:bg-white/14 focus:ring-2 focus:ring-accent/25"
+    ? "min-h-11 w-full rounded-xl border border-white/30 bg-white/[0.16] px-4 text-sm text-white shadow-sm outline-none transition placeholder:text-white/55 focus:border-accent focus:bg-white/20 focus:ring-2 focus:ring-accent/35"
     : "min-h-11 w-full rounded-xl border border-input bg-glass-strong px-4 text-sm outline-none transition placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20";
 
   const shellClass = isDark
-    ? "hero-lead-card glass-dark text-white"
+    ? isHeroLead
+      ? "hero-lead-card text-white"
+      : "glass-dark text-white"
     : "glass-panel-strong border border-white/70";
 
   async function submitRequest(event: FormEvent<HTMLFormElement>) {
@@ -66,7 +69,7 @@ export function LeadConsultCard({
       className={`relative overflow-hidden rounded-2xl ${compact ? "p-4 sm:p-5" : "p-5 sm:p-6 lg:p-7"} ${shellClass} ${className}`.trim()}
     >
       <div className="relative">
-        <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-[11px] ${isDark ? "text-white/55" : "text-muted-foreground"}`}>
+        <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-[11px] ${isDark ? "text-white/70" : "text-muted-foreground"}`}>
           Бесплатно
         </p>
         <h2
@@ -76,7 +79,7 @@ export function LeadConsultCard({
           {title}
         </h2>
         <p
-          className={`${compact ? "mt-1.5 text-xs leading-relaxed sm:text-sm" : "mt-2 text-sm leading-relaxed"} ${isDark ? "text-white/75" : "text-muted-foreground"}`}
+          className={`${compact ? "mt-1.5 text-xs leading-relaxed sm:text-sm" : "mt-2 text-sm leading-relaxed"} ${isDark ? "text-white/88" : "text-muted-foreground"}`}
         >
           {description}
         </p>
