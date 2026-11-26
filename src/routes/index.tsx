@@ -214,15 +214,17 @@ function HomePage() {
       </section>
 
       <section id="services" className="site-container relative z-10 py-20 sm:py-24">
-        <Reveal className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-lg">
+        <Reveal className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.55fr)] lg:items-end">
+          <div className="max-w-3xl">
             <p className="section-eyebrow">Что мы делаем</p>
             <h2 className="mt-4 text-balance font-display text-4xl font-bold tracking-tight sm:text-[2.75rem]">{homeCopy.servicesTitle}</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{homeCopy.servicesSubtitle}</p>
           </div>
-          <p className="hidden shrink-0 text-right text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:block">
-            {homeCopy.servicesAside}
-          </p>
+          <div className="max-w-xl lg:justify-self-end lg:pb-1">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{homeCopy.servicesSubtitle}</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground lg:text-right">
+              {homeCopy.servicesAside}
+            </p>
+          </div>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ slug, icon: Icon, title, shortText, image, imageAlt, featuredLabel }, index) => (
@@ -268,7 +270,7 @@ function HomePage() {
         <Reveal>
         <div className="glass-panel rounded-[1.75rem] p-6 transition duration-500 hover:shadow-[0_28px_80px_color-mix(in_oklab,var(--primary)_12%,transparent)] sm:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-md">
+            <div className="max-w-2xl">
               <p className="section-eyebrow">Стандарт качества</p>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">{homeCopy.standardsTitle}</h2>
             </div>
