@@ -96,11 +96,11 @@ export const portfolioRuText: Record<string, PortfolioTextPick> = {
     afterCaption: "Цвет под интерьер",
   },
   "niche-pvc": {
-    workLabel: "Окно в нише — аккуратная покраска у откосов",
-    beforeAlt: "Узкая ниша, белый профиль до работ",
-    afterAlt: "Окрашенный профиль без следов на откосах",
-    beforeCaption: "Белый в нише",
-    afterCaption: "Ровное покрытие",
+    workLabel: "Покраска ПВХ без демонтажа",
+    beforeAlt: "Окно в нише до покраски: белый заводской ПВХ и вид на город",
+    afterAlt: "То же окно после покраски: глубокий антрацит в том же ракурсе",
+    beforeCaption: "Белый заводской ПВХ",
+    afterCaption: "Глубокий антрацит",
   },
   "room-pvc": {
     workLabel: "Комната с ПВХ — освежение профиля",
@@ -244,7 +244,7 @@ export const portfolioRuText: Record<string, PortfolioTextPick> = {
   },
 };
 
-export const HOME_BEFORE_AFTER_ID = "wood-brown";
+export const HOME_BEFORE_AFTER_ID = "niche-pvc";
 
 export function applyPortfolioRuCopy<T extends PortfolioWithId>(project: T): T {
   const patch = portfolioRuText[project.id];

@@ -115,26 +115,26 @@ export function BeforeAfterSlider({
           />
         </div>
 
+        <div className="pointer-events-none absolute inset-x-3 top-3 z-20 flex items-start justify-between gap-3 sm:inset-x-4 sm:top-4">
+          <span className="before-after-caption-tag shadow-lg">До</span>
+          <span className="before-after-caption-tag shadow-lg">После</span>
+        </div>
+
         <div className="pointer-events-none absolute inset-0 z-20">
-          {position >= 50 ? (
-            <div className="absolute inset-y-0 left-0 flex items-end overflow-hidden" style={{ width: `${position}%` }}>
-              <div className="w-full min-w-0 bg-gradient-to-t from-black/35 to-transparent p-3 pr-7 pt-10 text-right sm:p-4 sm:pr-9 sm:pt-12">
-                <div className="before-after-caption">
-                  <span className="before-after-caption-tag">До</span>
-                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{beforeCaption}</p>
-                </div>
+          <div className="absolute inset-y-0 left-0 flex items-end overflow-hidden" style={{ width: `${position}%` }}>
+            <div className="w-full min-w-0 bg-gradient-to-t from-black/30 to-transparent p-3 pr-7 pt-10 sm:p-4 sm:pr-9 sm:pt-12">
+              <div className="before-after-caption">
+                <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{beforeCaption}</p>
               </div>
             </div>
-          ) : (
-            <div className="absolute inset-y-0 right-0 flex items-end overflow-hidden" style={{ width: `${100 - position}%` }}>
-              <div className="w-full min-w-0 bg-gradient-to-t from-black/35 to-transparent p-3 pl-7 pt-10 sm:p-4 sm:pl-9 sm:pt-12">
-                <div className="before-after-caption">
-                  <span className="before-after-caption-tag">После</span>
-                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{afterCaption}</p>
-                </div>
+          </div>
+          <div className="absolute inset-y-0 right-0 flex items-end overflow-hidden" style={{ width: `${100 - position}%` }}>
+            <div className="w-full min-w-0 bg-gradient-to-t from-black/30 to-transparent p-3 pl-7 pt-10 text-right sm:p-4 sm:pl-9 sm:pt-12">
+              <div className="before-after-caption">
+                <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{afterCaption}</p>
               </div>
             </div>
-          )}
+          </div>
         </div>
 
         <div
@@ -152,8 +152,8 @@ export function BeforeAfterSlider({
 
       {showFooterNote ? (
         <p className="site-container mt-3 text-center text-xs leading-relaxed text-muted-foreground sm:text-[13px]">
-          <span className="font-semibold text-destructive">До</span> — фото старого покрытия ·
-          <span className="font-semibold text-accent"> после</span> — реальная покраска профиля (не фильтр)
+          <span className="font-semibold text-destructive">До</span> — исходный профиль ·
+          <span className="font-semibold text-accent"> после</span> — реальный результат работ
         </p>
       ) : null}
     </div>

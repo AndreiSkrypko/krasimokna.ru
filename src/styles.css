@@ -663,7 +663,7 @@
 
 @utility before-after-track-card {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   max-height: none;
   cursor: ew-resize;
 }
@@ -723,11 +723,11 @@
 }
 
 .before-after-home .before-photo {
-  filter: contrast(1.05) brightness(1.08);
+  filter: contrast(1.02) brightness(1.15);
 }
 
 .before-after-home .after-photo {
-  filter: contrast(1.05) brightness(1.1) saturate(1.03);
+  filter: contrast(1.03) brightness(1.11) saturate(1.02);
 }
 
 .before-after-home .before-after-caption-title {

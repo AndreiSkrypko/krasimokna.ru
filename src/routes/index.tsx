@@ -190,12 +190,11 @@ function HomePage() {
             <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">{homeCopy.beforeAfterSubtitle}</h2>
           </Reveal>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-stretch lg:gap-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-8">
             <Reveal delay={0.06} className="flex min-w-0 flex-col">
-              <div className="before-after-home flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl ring-1 ring-primary/10 lg:min-h-full">
+              <div className="before-after-home overflow-hidden rounded-2xl shadow-[0_18px_50px_color-mix(in_oklab,var(--primary)_8%,transparent)] ring-1 ring-primary/10">
                 <BeforeAfterSlider
                   layout="card"
-                  fillColumn
                   showFooterNote
                   beforeSrc={homeBeforeAfter.beforeSrc}
                   afterSrc={homeBeforeAfter.afterSrc}
