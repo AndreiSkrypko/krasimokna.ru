@@ -122,13 +122,13 @@ function HomePage() {
         <div className="hero-vignette pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
         <section id="top" className="site-container relative flex min-h-0 flex-1 flex-col justify-end pb-10 pt-2 sm:justify-center sm:pb-12 sm:pt-4 lg:pb-14">
-          <div className="hero-stagger hero-stagger--ru grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(5.5rem,0.45fr)_minmax(17.5rem,21.5rem)] lg:items-center lg:gap-6 xl:gap-8">
+          <div className="hero-stagger hero-stagger--ru grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(34rem,42rem)_minmax(0,1fr)_minmax(19rem,22rem)] lg:items-center lg:gap-6 xl:grid-cols-[42rem_minmax(0,1fr)_minmax(22rem,26rem)] xl:gap-8">
             <div className="relative max-w-3xl lg:col-start-1 lg:max-w-none">
             <p className="hero-kicker flex items-center gap-3">
               <span className="h-px w-8 bg-white/35" aria-hidden="true" />
               {MARKET.heroKicker}
             </p>
-            <h1 className="hero-headline mt-5 text-balance font-display text-[2.85rem] font-bold leading-[0.94] tracking-tight text-white sm:text-6xl lg:mt-6 lg:text-[4rem] lg:leading-[0.92] xl:text-[4.35rem]">
+            <h1 className="hero-headline mt-5 text-balance font-display text-[2.85rem] font-bold leading-[0.94] tracking-tight text-white sm:text-6xl lg:mt-6 lg:text-[3.55rem] lg:leading-[0.92] xl:text-[4.35rem]">
               {homeCopy.headline}
               <br />
               <span className="hero-headline-em">{homeCopy.headlineEm}</span>
