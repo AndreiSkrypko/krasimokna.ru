@@ -146,7 +146,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
               <span className={`min-w-0 leading-tight ${brandTitle}`}>
                 <span className="block font-display text-[15px] font-bold tracking-tight sm:text-[17px]">Красим окна</span>
                 <span className={`hidden text-[11px] font-medium tracking-wide sm:block ${brandSub}`}>
-                  покраска · ремонт · реставрация
+                  реставрация · покраска · сервис
                 </span>
               </span>
             </a>
@@ -158,7 +158,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
                   Красим окна
                 </span>
                 <span className={`hidden text-[11px] font-medium tracking-wide sm:block ${brandSub}`}>
-                  покраска · ремонт · реставрация
+                  реставрация · покраска · сервис
                 </span>
               </span>
             </Link>

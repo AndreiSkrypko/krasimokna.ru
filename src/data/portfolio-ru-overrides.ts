@@ -12,7 +12,7 @@ type PortfolioWithId = { id: string } & PortfolioTextPick;
 
 export const portfolioRuText: Record<string, PortfolioTextPick> = {
   "wood-brown": {
-    workLabel: "Деревянная створка — смена оттенка",
+    workLabel: "Реставрация и покраска деревянного окна",
     beforeAlt: "Деревянная рама до работ: выцветшая краска и потёртости",
     afterAlt: "После покраски: насыщенный шоколадный тон профиля",
     beforeCaption: "Выцветшее покрытие",
@@ -244,7 +244,7 @@ export const portfolioRuText: Record<string, PortfolioTextPick> = {
   },
 };
 
-export const HOME_BEFORE_AFTER_ID = "apartment-pvc";
+export const HOME_BEFORE_AFTER_ID = "wood-brown";
 
 export function applyPortfolioRuCopy<T extends PortfolioWithId>(project: T): T {
   const patch = portfolioRuText[project.id];

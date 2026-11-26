@@ -9,9 +9,9 @@ import { SITE_PHONE_E164 } from "../../lib/contacts";
 export const Route = createFileRoute("/uslugi/")({
   head: () =>
     buildPageHead({
-      title: "Услуги — покраска окон и сервис в Москве и МО | Красим окна",
+      title: "Услуги: реставрация и покраска окон — Москва и МО | Красим окна",
       description:
-        "Каталог работ: окраска профиля, кондиционеры, дерево, стеклопакеты, фурнитура, клининг, радиаторы и ворота.",
+        "Каталог работ: реставрация деревянных окон, покраска ПВХ и алюминия, стеклопакеты, фурнитура и смежный сервис в Москве и МО.",
       path: "/uslugi",
     }),
   component: ServicesIndexPage,
@@ -27,9 +27,9 @@ function ServicesIndexPage() {
             <div className="pointer-events-none absolute -left-16 bottom-0 size-56 rounded-full bg-pine-soft/80 blur-3xl" aria-hidden="true" />
             <div className="relative max-w-2xl">
               <p className="section-eyebrow">Каталог услуг</p>
-              <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Услуги для квартир и частных домов</h1>
+              <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Реставрация, покраска и сервис окон</h1>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                Откройте карточку — там этапы, что входит в работу и форма вызова мастера по Москве и области.
+                Основная специализация — деревянные окна, ПВХ и алюминий. В каталоге также фурнитура, стеклопакеты, клининг и смежные работы по Москве и области.
               </p>
               <a
                 href={`tel:${SITE_PHONE_E164}`}
@@ -43,7 +43,7 @@ function ServicesIndexPage() {
 
         <section className="site-container mt-10 sm:mt-12">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ slug, title, shortText, image, imageAlt, icon: Icon }, index) => (
+            {services.map(({ slug, title, shortText, image, imageAlt, icon: Icon, featuredLabel }, index) => (
               <Link
                 key={slug}
                 to="/uslugi/$slug"
@@ -58,9 +58,14 @@ function ServicesIndexPage() {
                     loading="lazy"
                     className="size-full object-cover transition duration-700 group-hover:scale-[1.04]"
                   />
-                  <span className="absolute left-4 top-4 grid size-11 place-items-center rounded-xl bg-white/90 text-primary shadow-lg ring-1 ring-white/60 backdrop-blur-sm transition group-hover:bg-accent group-hover:text-accent-foreground">
+                  <span className="absolute left-4 top-4 z-10 grid size-11 place-items-center rounded-xl bg-white/90 text-primary shadow-lg ring-1 ring-white/60 backdrop-blur-sm transition group-hover:bg-accent group-hover:text-accent-foreground">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
+                  {featuredLabel ? (
+                    <span className="absolute right-4 top-4 z-10 rounded-full bg-accent px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow-lg">
+                      {featuredLabel}
+                    </span>
+                  ) : null}
                 </div>
                 <div className="p-6">
                   <h2 className="font-display text-lg font-semibold tracking-tight">{title}</h2>

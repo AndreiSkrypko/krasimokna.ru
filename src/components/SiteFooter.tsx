@@ -86,7 +86,7 @@ export function SiteFooter({ variant = "default", onOpenLeadForm }: SiteFooterPr
                 </span>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                Покраска и реставрация окон без демонтажа — {MARKET.serviceAreaText}.
+                Команда из Беларуси: реставрация деревянных окон и покраска ПВХ и алюминия — {MARKET.serviceAreaText}.
               </p>
             </div>
 

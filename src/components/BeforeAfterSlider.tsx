@@ -98,6 +98,14 @@ export function BeforeAfterSlider({
         aria-label={ariaLabel}
       >
         <div className="absolute inset-0">
+          <img src={afterSrc} alt={afterAlt} draggable={false} className={`${photoClassName} after-photo`} />
+          <div
+            className={`after-shine-overlay pointer-events-none absolute inset-0 ${fillColumn ? "opacity-60" : ""}`}
+            aria-hidden="true"
+          />
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
           <img src={beforeSrc} alt={beforeAlt} draggable={false} className={`${photoClassName} before-photo`} />
           <div
             className={`before-damage-overlay pointer-events-none absolute inset-0 ${
@@ -107,21 +115,13 @@ export function BeforeAfterSlider({
           />
         </div>
 
-        <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
-          <img src={afterSrc} alt={afterAlt} draggable={false} className={`${photoClassName} after-photo`} />
-          <div
-            className={`after-shine-overlay pointer-events-none absolute inset-0 ${fillColumn ? "opacity-60" : ""}`}
-            aria-hidden="true"
-          />
-        </div>
-
         <div className="pointer-events-none absolute inset-0 z-20">
           {position >= 50 ? (
             <div className="absolute inset-y-0 left-0 flex items-end overflow-hidden" style={{ width: `${position}%` }}>
               <div className="w-full min-w-0 bg-gradient-to-t from-black/35 to-transparent p-3 pr-7 pt-10 text-right sm:p-4 sm:pr-9 sm:pt-12">
                 <div className="before-after-caption">
-                  <span className="before-after-caption-tag">После</span>
-                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{afterCaption}</p>
+                  <span className="before-after-caption-tag">До</span>
+                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{beforeCaption}</p>
                 </div>
               </div>
             </div>
@@ -129,8 +129,8 @@ export function BeforeAfterSlider({
             <div className="absolute inset-y-0 right-0 flex items-end overflow-hidden" style={{ width: `${100 - position}%` }}>
               <div className="w-full min-w-0 bg-gradient-to-t from-black/35 to-transparent p-3 pl-7 pt-10 sm:p-4 sm:pl-9 sm:pt-12">
                 <div className="before-after-caption">
-                  <span className="before-after-caption-tag">До</span>
-                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{beforeCaption}</p>
+                  <span className="before-after-caption-tag">После</span>
+                  <p className="before-after-caption-title text-balance [overflow-wrap:anywhere]">{afterCaption}</p>
                 </div>
               </div>
             </div>

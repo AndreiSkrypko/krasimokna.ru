@@ -26,9 +26,9 @@ const heroImage = "/window-painting-hero-ru.webp";
 export const Route = createFileRoute("/")({
   head: () => ({
     ...buildPageHead({
-      title: "Красим окна — покраска профиля и сервис окон в Москве и МО",
+      title: "Реставрация и покраска окон в Москве и МО | Красим окна",
       description:
-        "Окраска ПВХ, дерева и алюминия без демонтажа, реставрация, стеклопакеты и клининг — выезд по Москве и Подмосковью.",
+        "Команда мастеров из Беларуси: реставрация деревянных окон, покраска ПВХ и алюминия без демонтажа, сервис окон — выезд по Москве и Московской области.",
       path: "/",
     }),
     scripts: [
@@ -226,7 +226,7 @@ function HomePage() {
           </p>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ slug, icon: Icon, title, shortText, image, imageAlt }, index) => (
+          {services.map(({ slug, icon: Icon, title, shortText, image, imageAlt, featuredLabel }, index) => (
             <Reveal key={slug} delay={0.05 + index * 0.07}>
             <Link
               to="/uslugi/$slug"
@@ -243,9 +243,14 @@ function HomePage() {
                   decoding="async"
                   className="size-full object-cover transition duration-700 group-hover:scale-[1.02]"
                 />
-                <span className="absolute left-4 top-4 grid size-11 place-items-center rounded-lg bg-white/92 text-primary shadow-md ring-1 ring-black/5 backdrop-blur-sm">
+                <span className="absolute left-4 top-4 z-10 grid size-11 place-items-center rounded-lg bg-white/92 text-primary shadow-md ring-1 ring-black/5 backdrop-blur-sm">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
+                {featuredLabel ? (
+                  <span className="absolute right-4 top-4 z-10 rounded-full bg-accent px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow-lg">
+                    {featuredLabel}
+                  </span>
+                ) : null}
               </div>
               <div className="p-6">
                 <h3 className="font-display text-lg font-semibold tracking-tight">{title}</h3>

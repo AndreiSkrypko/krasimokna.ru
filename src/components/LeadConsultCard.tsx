@@ -108,7 +108,7 @@ export function LeadConsultCard({
               id={`${id}-details`}
               name="details"
               rows={compact ? 1 : 2}
-              placeholder="Что покрасить?"
+              placeholder="Например: реставрация дерева или покраска ПВХ"
               className={`${fieldClassName} resize-none py-2.5 ${compact ? "min-h-11" : "min-h-[4.5rem]"}`}
             />
             {submitError ? (

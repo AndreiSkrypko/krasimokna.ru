@@ -38,9 +38,9 @@ function buildPortfolioGallery(): ZoomPhoto[] {
 export const Route = createFileRoute("/portfolio/")({
   head: () =>
     buildPageHead({
-      title: "Портфолио — объекты в Москве и МО | Красим окна",
+      title: "Портфолио: реставрация и покраска окон — Москва и МО | Красим окна",
       description:
-        "Снимки до и после с выездов: ПВХ, дерево, двери и фасады — уникальные кейсы по Подмосковью и городу.",
+        "Снимки до и после: реставрация деревянных окон, покраска ПВХ и алюминия, двери и фасады — объекты в Москве и Московской области.",
       path: "/portfolio",
     }),
   component: PortfolioPage,
@@ -93,9 +93,9 @@ function PortfolioPage() {
           </Link>
           <Reveal className="mt-6 max-w-2xl">
             <p className="section-eyebrow">Портфолио</p>
-            <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Объекты на карте МО</h1>
+            <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Реставрация и покраска окон — до/после</h1>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              В каждой карточке — кадр до работ и финальный оттенок профиля; подписи описывают задачу, не дублируя другие сайты.
+              В каждой карточке — состояние до работ и финиш после реставрации или покраски профиля на объектах в Москве и области.
             </p>
           </Reveal>
         </section>
