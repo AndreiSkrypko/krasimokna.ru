@@ -31,7 +31,7 @@ export function HeroLeadDialog({
         formId={FORM_ID}
         source="Главная — расчёт"
         detailsLabel="Комментарий"
-        detailsPlaceholder="Что покрасить?"
+        detailsPlaceholder="Например: реставрация дерева или покраска ПВХ"
         submitLabel="Заказать консультацию"
         onSuccess={() => onOpenChange(false)}
       />

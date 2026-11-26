@@ -14,7 +14,7 @@ export function HomeContactPanel({ onOpenLeadForm }: HomeContactPanelProps) {
       <p className="section-eyebrow">Контакты</p>
       <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">Связаться с нами</h2>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        Звоните по Москве и области или отправьте заявку — согласуем объём работ и удобный выезд.
+        Команда из Беларуси на связи по Москве и области: оценим деревянные рамы, ПВХ или алюминий по фото и согласуем выезд.
       </p>
 
       <a

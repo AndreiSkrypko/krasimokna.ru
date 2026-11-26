@@ -26,9 +26,9 @@ const heroImage = "/window-painting-hero-ru.webp";
 export const Route = createFileRoute("/")({
   head: () => ({
     ...buildPageHead({
-      title: "Красим окна — покраска профиля и сервис окон в Москве и МО",
+      title: "Реставрация и покраска окон в Москве и МО | Красим окна",
       description:
-        "Окраска ПВХ, дерева и алюминия без демонтажа, реставрация, стеклопакеты и клининг — выезд по Москве и Подмосковью.",
+        "Команда мастеров из Беларуси: реставрация деревянных окон, покраска ПВХ и алюминия без демонтажа, сервис окон — выезд по Москве и Московской области.",
       path: "/",
     }),
     scripts: [
@@ -122,13 +122,13 @@ function HomePage() {
         <div className="hero-vignette pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
         <section id="top" className="site-container relative flex min-h-0 flex-1 flex-col justify-end pb-10 pt-2 sm:justify-center sm:pb-12 sm:pt-4 lg:pb-14">
-          <div className="hero-stagger hero-stagger--ru grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(5.5rem,0.45fr)_minmax(17.5rem,21.5rem)] lg:items-center lg:gap-6 xl:gap-8">
+          <div className="hero-stagger hero-stagger--ru grid w-full min-w-0 gap-8 lg:grid-cols-[minmax(34rem,42rem)_minmax(0,1fr)_minmax(19rem,22rem)] lg:items-center lg:gap-6 xl:grid-cols-[42rem_minmax(0,1fr)_minmax(22rem,26rem)] xl:gap-8">
             <div className="relative max-w-3xl lg:col-start-1 lg:max-w-none">
             <p className="hero-kicker flex items-center gap-3">
               <span className="h-px w-8 bg-white/35" aria-hidden="true" />
               {MARKET.heroKicker}
             </p>
-            <h1 className="hero-headline mt-5 text-balance font-display text-[2.85rem] font-bold leading-[0.94] tracking-tight text-white sm:text-6xl lg:mt-6 lg:text-[4rem] lg:leading-[0.92] xl:text-[4.35rem]">
+            <h1 className="hero-headline mt-5 text-balance font-display text-[2.85rem] font-bold leading-[0.94] tracking-tight text-white sm:text-6xl lg:mt-6 lg:text-[3.55rem] lg:leading-[0.92] xl:text-[4.35rem]">
               {homeCopy.headline}
               <br />
               <span className="hero-headline-em">{homeCopy.headlineEm}</span>
@@ -190,12 +190,11 @@ function HomePage() {
             <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">{homeCopy.beforeAfterSubtitle}</h2>
           </Reveal>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-stretch lg:gap-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-8">
             <Reveal delay={0.06} className="flex min-w-0 flex-col">
-              <div className="before-after-home flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl ring-1 ring-primary/10 lg:min-h-full">
+              <div className="before-after-home overflow-hidden rounded-2xl shadow-[0_18px_50px_color-mix(in_oklab,var(--primary)_8%,transparent)] ring-1 ring-primary/10">
                 <BeforeAfterSlider
                   layout="card"
-                  fillColumn
                   showFooterNote
                   beforeSrc={homeBeforeAfter.beforeSrc}
                   afterSrc={homeBeforeAfter.afterSrc}
@@ -215,18 +214,20 @@ function HomePage() {
       </section>
 
       <section id="services" className="site-container relative z-10 py-20 sm:py-24">
-        <Reveal className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-lg">
+        <Reveal className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.55fr)] lg:items-end">
+          <div className="max-w-3xl">
             <p className="section-eyebrow">Что мы делаем</p>
             <h2 className="mt-4 text-balance font-display text-4xl font-bold tracking-tight sm:text-[2.75rem]">{homeCopy.servicesTitle}</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{homeCopy.servicesSubtitle}</p>
           </div>
-          <p className="hidden shrink-0 text-right text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:block">
-            {homeCopy.servicesAside}
-          </p>
+          <div className="max-w-xl lg:justify-self-end lg:pb-1">
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{homeCopy.servicesSubtitle}</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground lg:text-right">
+              {homeCopy.servicesAside}
+            </p>
+          </div>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ slug, icon: Icon, title, shortText, image, imageAlt }, index) => (
+          {services.map(({ slug, icon: Icon, title, shortText, image, imageAlt, featuredLabel }, index) => (
             <Reveal key={slug} delay={0.05 + index * 0.07}>
             <Link
               to="/uslugi/$slug"
@@ -243,9 +244,14 @@ function HomePage() {
                   decoding="async"
                   className="size-full object-cover transition duration-700 group-hover:scale-[1.02]"
                 />
-                <span className="absolute left-4 top-4 grid size-11 place-items-center rounded-lg bg-white/92 text-primary shadow-md ring-1 ring-black/5 backdrop-blur-sm">
+                <span className="absolute left-4 top-4 z-10 grid size-11 place-items-center rounded-lg bg-white/92 text-primary shadow-md ring-1 ring-black/5 backdrop-blur-sm">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
+                {featuredLabel ? (
+                  <span className="absolute right-4 top-4 z-10 rounded-full bg-accent px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-accent-foreground shadow-lg">
+                    {featuredLabel}
+                  </span>
+                ) : null}
               </div>
               <div className="p-6">
                 <h3 className="font-display text-lg font-semibold tracking-tight">{title}</h3>
@@ -264,7 +270,7 @@ function HomePage() {
         <Reveal>
         <div className="glass-panel rounded-[1.75rem] p-6 transition duration-500 hover:shadow-[0_28px_80px_color-mix(in_oklab,var(--primary)_12%,transparent)] sm:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-md">
+            <div className="max-w-2xl">
               <p className="section-eyebrow">Стандарт качества</p>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">{homeCopy.standardsTitle}</h2>
             </div>

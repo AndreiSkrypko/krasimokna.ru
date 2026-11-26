@@ -4,12 +4,13 @@ import { MARKET, SISTER_SITE_URL } from "./site-config";
 export { SISTER_SITE_URL } from "./site-config";
 
 export const SITE_URL =
-  (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ?? "https://krasimokna.ru";
+  (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
+  "https://krasimokna.ru";
 
 export const SITE_NAME = "Красим окна";
-export const SITE_TAGLINE = "Окраска профиля · сервис · выезд по МО";
+export const SITE_TAGLINE = "Реставрация дерева · покраска ПВХ и алюминия";
 export const SITE_DESCRIPTION =
-  "Мастера обновляют цвет ПВХ, дерева и алюминия без демонтажа, чинят фурнитуру и моют окна после ремонта — Москва и Подмосковье.";
+  "Команда из Беларуси: реставрация деревянных окон, покраска ПВХ и алюминия без демонтажа, сервис окон — Москва и Московская область.";
 
 export const OG_IMAGE_PATH = "/og-image.webp";
 export const OG_IMAGE_WIDTH = 1200;
@@ -38,7 +39,7 @@ export function defaultOpenGraphMeta(overrides?: {
   path?: string;
   image?: string;
 }) {
-  const title = overrides?.title ?? `${SITE_NAME} — окраска окон и сервис в Москве и МО`;
+  const title = overrides?.title ?? `${SITE_NAME} — реставрация и покраска окон в Москве и МО`;
   const description = overrides?.description ?? SITE_DESCRIPTION;
   const path = overrides?.path ?? "/";
   const url = absoluteUrl(path);

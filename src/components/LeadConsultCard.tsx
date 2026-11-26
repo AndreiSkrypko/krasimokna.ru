@@ -84,23 +84,29 @@ export function LeadConsultCard({
           {description}
         </p>
 
-        <form className={`${compact ? "mt-4 space-y-2.5" : "mt-5 space-y-3"}`} onSubmit={submitRequest} aria-labelledby={`${id}-title`}>
-            <label className="sr-only" htmlFor={`${id}-name`}>
-              Ваше имя
-            </label>
-            <input id={`${id}-name`} name="name" required autoComplete="name" placeholder="Ваше имя" className={fieldClassName} />
-            <label className="sr-only" htmlFor={`${id}-phone`}>
-              Телефон
-            </label>
-            <input
-              id={`${id}-phone`}
-              name="phone"
-              type="tel"
-              required
-              autoComplete="tel"
-              placeholder="Телефон"
-              className={fieldClassName}
-            />
+        <form
+          className={`${compact ? "mt-4 gap-2.5" : "mt-5 gap-3"} flex flex-col`}
+          onSubmit={submitRequest}
+          aria-labelledby={`${id}-title`}
+        >
+            <div className={isHeroLead ? "grid gap-3 xl:grid-cols-2" : "contents"}>
+              <label className="sr-only" htmlFor={`${id}-name`}>
+                Ваше имя
+              </label>
+              <input id={`${id}-name`} name="name" required autoComplete="name" placeholder="Ваше имя" className={fieldClassName} />
+              <label className="sr-only" htmlFor={`${id}-phone`}>
+                Телефон
+              </label>
+              <input
+                id={`${id}-phone`}
+                name="phone"
+                type="tel"
+                required
+                autoComplete="tel"
+                placeholder="Телефон"
+                className={fieldClassName}
+              />
+            </div>
             <label className="sr-only" htmlFor={`${id}-details`}>
               Комментарий
             </label>
@@ -108,7 +114,7 @@ export function LeadConsultCard({
               id={`${id}-details`}
               name="details"
               rows={compact ? 1 : 2}
-              placeholder="Что покрасить?"
+              placeholder="Например: реставрация дерева или покраска ПВХ"
               className={`${fieldClassName} resize-none py-2.5 ${compact ? "min-h-11" : "min-h-[4.5rem]"}`}
             />
             {submitError ? (
