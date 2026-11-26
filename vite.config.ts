@@ -78,7 +78,7 @@ export default defineConfig(({ command }) => {
   const staticHosting = deployTarget === "static";
 
   const plugins: PluginOption[] = [
-  ].concat(command === "serve" ? [devClientAssetPaths()] : [], [
+    ...(command === "serve" ? [devClientAssetPaths()] : []),
     tailwindcss(),
     tsconfigPaths({ projects: ["./tsconfig.json"] }),
     ...tanstackStart({
@@ -105,7 +105,7 @@ export default defineConfig(({ command }) => {
         : {}),
     }),
     react(),
-  ]);
+  ];
 
   if (command === "build" && deployTarget === "vercel") {
     plugins.push(...nitro({ preset: "vercel" }));
